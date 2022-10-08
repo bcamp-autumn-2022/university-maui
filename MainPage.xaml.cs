@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Text;
+//using static Android.Graphics.Paint;
+
 namespace university_maui;
 
 public partial class MainPage : ContentPage
@@ -22,14 +24,15 @@ public partial class MainPage : ContentPage
             dynamic users = JsonConvert.DeserializeObject(data.Result);
 
             //dataGrid.ItemsSource = users;//writes the data to DataGrid
-
+            List<User> usersList = new List<User>();
             string user_data = "";
             foreach (var user in users)
             {
+                usersList.Add(new User { Firstname = user.firstname, Lastname=user.lastname, Username=user.username });
                 user_data += user.firstname + " | " + user.lastname + " | " + user.username + "\n";
             }
-            labelResult.Text = user_data;
-
+            //labelResult.Text = user_data;
+            collectionUser.ItemsSource = usersList.ToList();
         }
         else
         {

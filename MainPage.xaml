@@ -7,7 +7,7 @@
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
-            VerticalOptions="Center">
+            >
 
             <Label
                 Text="University"
@@ -19,7 +19,6 @@
             <Button
                 x:Name="userBtn"
                 Text="Show Users"
-                SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="GetUsers"
                 HorizontalOptions="Center" />
             <Label
@@ -27,6 +26,41 @@
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="24"
                 HorizontalOptions="Center" />
+            <CollectionView ItemsSource="{Binding usersList}"
+                            x:Name="collectionUser"
+                            HorizontalOptions="Center">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="150" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                Text="{Binding Firstname}"
+                                FontAttributes="Bold" 
+                                FontSize="24"
+                                VerticalTextAlignment="Center"
+                             />
+                            <Label Grid.Column="2"
+                                Text="{Binding Lastname}"
+                                FontAttributes="Bold" 
+                                FontSize="24"
+                                VerticalTextAlignment="Center"
+                             />
+                            <Label Grid.Column="4"
+                                Text="{Binding Username}"
+                                FontAttributes="Bold"
+                                FontSize="24"
+                                VerticalTextAlignment="Center"
+                             />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
         </VerticalStackLayout>
     </ScrollView>
