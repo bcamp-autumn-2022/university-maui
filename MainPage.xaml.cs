@@ -8,8 +8,6 @@ namespace university_maui;
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
-
     public MainPage()
     {
         InitializeComponent();
@@ -23,10 +21,8 @@ public partial class MainPage : ContentPage
         if (data.Result.Length > 3) //Result is not []
         {
             dynamic users = JsonConvert.DeserializeObject(data.Result);
-
-            //dataGrid.ItemsSource = users;//writes the data to DataGrid
             List<User> usersList = new List<User>();
-            string user_data = "";
+
             foreach (var user in users)
             {
                 string identity;
@@ -35,7 +31,6 @@ public partial class MainPage : ContentPage
                 else identity = "teacher";
                 usersList.Add(new User { Name = user.firstname+' '+user.lastname, Username=user.username, Identity=identity });
             }
-            //labelResult.Text = user_data;
             collectionUser.ItemsSource = usersList.ToList();
         }
         else
