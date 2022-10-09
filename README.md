@@ -11,4 +11,4 @@ This application gets the data from .NET WebApi from Heroku.
 
 In Android emulator the application looks like this 
 
-<img src="emulator.PNG" width="300px">
+<img src="emulator.PNG" width="320px">
