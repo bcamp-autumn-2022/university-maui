@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿//using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Text;
 //using static Android.Graphics.Paint;
@@ -28,8 +29,11 @@ public partial class MainPage : ContentPage
             string user_data = "";
             foreach (var user in users)
             {
-                usersList.Add(new User { Firstname = user.firstname, Lastname=user.lastname, Username=user.username });
-                user_data += user.firstname + " | " + user.lastname + " | " + user.username + "\n";
+                string identity;
+                if (user.identity == 1) identity = "student";
+                else if (user.identity == 2) identity = "admin";
+                else identity = "teacher";
+                usersList.Add(new User { Name = user.firstname+' '+user.lastname, Username=user.username, Identity=identity });
             }
             //labelResult.Text = user_data;
             collectionUser.ItemsSource = usersList.ToList();

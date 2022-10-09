@@ -28,36 +28,69 @@
                 HorizontalOptions="Center" />
             <CollectionView ItemsSource="{Binding usersList}"
                             x:Name="collectionUser"
-                            HorizontalOptions="Center">
+                            HorizontalOptions="Center" IsGrouped="False">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150" />
-                                <ColumnDefinition Width="10" />
-                                <ColumnDefinition Width="150" />
-                                <ColumnDefinition Width="10" />
-                                <ColumnDefinition Width="150" />
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0"
-                                Text="{Binding Firstname}"
-                                FontAttributes="Bold" 
-                                FontSize="24"
-                                VerticalTextAlignment="Center"
-                             />
-                            <Label Grid.Column="2"
-                                Text="{Binding Lastname}"
-                                FontAttributes="Bold" 
-                                FontSize="24"
-                                VerticalTextAlignment="Center"
-                             />
-                            <Label Grid.Column="4"
-                                Text="{Binding Username}"
+                        <Border Stroke="#C49B33"
+                            StrokeThickness="4"
+                            StrokeShape="RoundRectangle 40,0,0,40"
+                            Background="#2B0B98"
+                            Padding="16,8"
+                            HorizontalOptions="Center">
+                            <Grid Padding="10" BackgroundColor="White" >
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="10" />
+                                    <ColumnDefinition Width="400" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0"
+                                Text="USERNAME"
                                 FontAttributes="Bold"
                                 FontSize="24"
+                                TextColor="Black"
                                 VerticalTextAlignment="Center"
                              />
+                                <Label Grid.Row="1" Grid.Column="0"
+                                Text="NAME"
+                                FontAttributes="Bold"
+                                FontSize="24"
+                                TextColor="Black"
+                                VerticalTextAlignment="Center"
+                             />
+                                <Label Grid.Row="2" Grid.Column="0"
+                                Text="ROLE"
+                                FontAttributes="Bold"
+                                FontSize="24"
+                                TextColor="Black"
+                                VerticalTextAlignment="Center"
+                             />
+                                <Label Grid.Row="0" Grid.Column="2"
+                                Text="{Binding Username}"
+                                FontSize="24"
+                                TextColor="Black"
+                                VerticalTextAlignment="Center"
+                             />
+                                <Label Grid.Row="1" Grid.Column="2"
+                                Text="{Binding Name}"
+                                FontSize="24"
+                                TextColor="Black"
+                                VerticalTextAlignment="Center"
+                             />
+                                <Label Grid.Row="2" Grid.Column="2"
+                                Text="{Binding Identity}"
+                                FontSize="24"
+                                TextColor="Black"
+                                VerticalTextAlignment="Center"
+                             />
+                           
                         </Grid>
+                       </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
