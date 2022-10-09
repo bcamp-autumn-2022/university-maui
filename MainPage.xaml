@@ -25,7 +25,7 @@
             <Label
                 x:Name="labelResult"
                 SemanticProperties.HeadingLevel="Level1"
-                FontSize="24"
+                FontSize="14"
                 HorizontalOptions="Center" />
             <CollectionView ItemsSource="{Binding usersList}"
                             x:Name="collectionUser"
@@ -46,46 +46,46 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="100" />
                                     <ColumnDefinition Width="10" />
-                                    <ColumnDefinition Width="400" />
+                                    <ColumnDefinition Width="140" />
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Row="0" Grid.Column="0"
                                 Text="USERNAME"
                                 FontAttributes="Bold"
-                                FontSize="24"
+                                FontSize="14"
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                              />
                                 <Label Grid.Row="1" Grid.Column="0"
                                 Text="NAME"
                                 FontAttributes="Bold"
-                                FontSize="24"
+                                FontSize="14"
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                              />
                                 <Label Grid.Row="2" Grid.Column="0"
                                 Text="ROLE"
                                 FontAttributes="Bold"
-                                FontSize="24"
+                                FontSize="14"
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                              />
                                 <Label Grid.Row="0" Grid.Column="2"
                                 Text="{Binding Username}"
-                                FontSize="24"
+                                FontSize="14"
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                              />
                                 <Label Grid.Row="1" Grid.Column="2"
                                 Text="{Binding Name}"
-                                FontSize="24"
+                                FontSize="14"
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                              />
                                 <Label Grid.Row="2" Grid.Column="2"
                                 Text="{Binding Identity}"
-                                FontSize="24"
+                                FontSize="14"
                                 TextColor="Black"
                                 VerticalTextAlignment="Center"
                              />
